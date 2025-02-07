@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  pulsar:
+    image: apachepulsar/pulsar:4.0.2
+    container_name: pulsar-standalone
+    command: bin/pulsar standalone
+    restart: always
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    volumes:
+      - pulsardata:/pulsar/data
+      - pulsarconf:/pulsar/conf
+    tty: true
+
+volumes:
+  pulsardata:
+  pulsarconf:
