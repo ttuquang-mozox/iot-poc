@@ -17,16 +17,26 @@ spec:
   configuration:
     clusters:
       - name: clickhouse
-
     users:
       # Directly
       mozox1/password_sha256_hex: ea3e0ba4c196be92523629d14b345d054588f5df9cfb338369e6a15a3b562fa9
-
       # Ref from secrets
-      mozox2/k8s_secret_password: clickhouse-password/mozox_pw
+      mozox/k8s_secret_password: clickhouse-password/mozox_pw
       mozox3/k8s_secret_password_sha256_hex: clickhouse-password/mozox_pw_sha256_hex
       mozox4/password_double_sha1_hex:
         valueFrom:
           secretKeyRef:
             name: clickhouse-password
             key: mozox_pw_double_sha1_hex
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: clickhouse
+spec:
+  selector:
+    clickhouse.altinity.com/chi: single
+  ports:
+    - name: http
+      port: 8123
+      targetPort: 8123
