@@ -3,8 +3,8 @@ import sys
 import json
 
 CLICKHOUSE_CLOUD_HOSTNAME = 'localhost'
-CLICKHOUSE_CLOUD_USER = 'mozox2'
-CLICKHOUSE_CLOUD_PASSWORD = 'password'
+CLICKHOUSE_CLOUD_USER = 'default'
+CLICKHOUSE_CLOUD_PASSWORD = '12345678'
 
 client = clickhouse_connect.get_client(
     host=CLICKHOUSE_CLOUD_HOSTNAME, port=8123, username=CLICKHOUSE_CLOUD_USER, password=CLICKHOUSE_CLOUD_PASSWORD)

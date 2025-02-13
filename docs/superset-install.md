@@ -49,3 +49,6 @@ bootstrapScript: |
 helm upgrade --install --values superset-values.yaml superset superset/superset
 ```
 
+```sh
+kubectl port-forward svc/superset 8088:8088
+```

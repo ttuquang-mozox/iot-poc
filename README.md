@@ -3,17 +3,18 @@
 This is demo for IoT Project.
 
 **Current Techstack**
-* K8s
+* Kubernetes
 * Pulsar
 * Clickhouse
-* Grafana
+* Superset
 
 ## Tutorial
 
-1. Run pulsar
-2. Run clickhouse
-
-Test consume
+1. Install Superset
+2. Install Clickhouse
+3. Connect Superset to Clickhouse
+4. Install Pulsar
+5. Test consumer
 ```sh
 python3 consume.py
 ```
@@ -22,3 +23,9 @@ Test producer
 ```sh
 python3 producer.py
 ```
+
+## Diagram
+
+![diagram](./diagram.png)
+
+Basic diagram

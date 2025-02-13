@@ -17,3 +17,9 @@ minikube tunnel
 ```sh
 kubectl port-forward svc/pulsar-service 6650:6650
 ```
+
+## Set default namespace
+
+```sh
+kubectl config set-context --current --namespace=my-iot
+```

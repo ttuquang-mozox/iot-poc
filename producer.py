@@ -20,6 +20,6 @@ def generate_durian_sensor_data():
 while True:
     json_data = json.dumps(generate_durian_sensor_data())
     producer.send((json_data).encode('utf-8'))
-    time.sleep(1)
+    time.sleep(10)
 
 client.close()

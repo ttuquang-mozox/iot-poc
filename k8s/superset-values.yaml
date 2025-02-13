@@ -66,6 +66,7 @@ bootstrapScript: |
     authlib \
     psycopg2-binary \
     mysqlclient \
+    clickhouse-connect \
 
   # Create bootstrap file if it doesn't exist
   if [ ! -f ~/bootstrap ]; then
@@ -745,7 +746,7 @@ init:
   jobAnnotations:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-delete-policy": "before-hook-creation"
-  loadExamples: false
+  loadExamples: true
   createAdmin: true
   adminUser:
     username: admin
